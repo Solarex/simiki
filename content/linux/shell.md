@@ -11,7 +11,7 @@ date: 2014-06-11 23:31
 + ``echo "foo hold" | sudo dpkg --set-selections``
 + ``echo "foo install" | sudo dpkg --set-selections``
 + ``apt-cache search foo, dpkg -l foo*``, ``apt-cache show foo , dpkg --print-avail foo``
-+ ``dpkg -L foo`
++ ``dpkg -L foo``
 + ``dpkg --get-selections``
 + ``dlocate foo, dpkg -S foo`` foo文件来自哪个包
 + ``apt-file search foo`` 哪些安装包提供foo文件,不仅仅包含系统中已经安装的
