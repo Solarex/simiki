@@ -21,6 +21,17 @@ date: 2014-06-11 23:31
 + ``adb get-state``
 + ``adb wait-for-device``
 + adb shell,Adb provides a Unix shell that you can use to run a variety of commands on an emulator or connected device. The command binaries are stored in the file system of the emulator or device, at ``/system/bin/``.
++ ``adb shell am start PACKAGE_NAME/ACTIVITY_IN_PACKAGE``,``adb shell am start -n com.meizu.voiceassistant/.MainActivity``
++ ``adb shell screencap -p /sdcard/sc.png && adb pull /sdcard/sc.png .``,``adb shell screencap -p | perl -pe 's/\x0D\x0A/\x0A/g' > sc.png``,[ref](http://blog.shvetsov.com/2013/02/grab-android-screenshot-to-computer-via.html)
++ ``adb shell input keyevent 26``,sends the power button event to turn the device on or off
++ ``adb shell input keyevent 82``,sends the event that unlocks the lockscreen on the device,can be combine with the power button event to turn on the device and unlock the screen
++ ``adb shell pm list packages -f``,list all installed packages
++ ``adb shell pm clear PACKAGENAME``,clear application data,``adb shell pm clear com.meizu.voiceassistant``
++ ``adb logcat -v threadtime -s TAG1 TAG2``
++ ``adb logcat "*:PRIORITY"``,``adb logcat "*:W"``,``V,D,I,W,E,F,S``,verbose,debug,info,warning,error,fatal,silent
++ ``adb logcat -s TAG1:PRIORITY TAG2:PRIORITY``
++ ``adb logcat -c``
+
 
 ## adb shell am (ActivityManager) ##
 
