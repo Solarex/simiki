@@ -71,4 +71,20 @@ popd
 + ``git commit --amend --reset-author``重置最后一次提交的author
 + ``git log --follow -p file``，查看文件历史版本
 + ``git cherry-pick commit-id``，"复制"一个提交节点并在当前分支做一次完全一样的新提交。
++ ``git clone -o meizu ssh://*****``,change remote origin to meizu
 + [visual-git-guide](https://marklodato.github.io/visual-git-guide/index-zh-cn.html)
++ ``git config --global diff.external /path/to/meld.sh``
+
+```bash
+#!/bin/bash
+meld "$2" "$5" >/dev/null >2&1
+```
+
++ ``git config --global diff.external /path/to/opendiff.sh``,``git config --global --unset diff.external``
+
+```bash
+#!/bin/bash
+/usr/bin/opendiff "$2" "$5" -merge "$1"
+```
+
+
