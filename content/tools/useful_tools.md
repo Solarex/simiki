@@ -14,7 +14,7 @@ date: 2014-06-15 10:05
 - Homebrew
 - Dash
 - Alfred
-- Mou
+- Mou & Macdown & Markdown Plus
 - iTerm2
 - GuardLiveeload
 - Divvy
@@ -29,6 +29,12 @@ date: 2014-06-15 10:05
 - Parallels Desktop
 - iSSH
 - xee
+- JiTouch
+- HyperSwitch
+- graphviz
+- OmniGraffle
+- astah
+- Pixelmator
 - https://gist.github.com/erikreagan/3259442
 
 
