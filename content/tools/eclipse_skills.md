@@ -18,4 +18,7 @@ date: 2014-06-11 23:29
 + 后退历史记录 Alt+ ←、Alt+ →
 + 快速查找选定的内容 Ctrl+K
 + 重命名 Alt+Shift+R
++ find usage ``shift+command+g``
++ Alt+left command+[ last location
++ command+g declaration
 

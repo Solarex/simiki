@@ -195,3 +195,10 @@ applications to break and other undersireable behavior.
 1 [internal]: Install on internal device storage
 2 [external]: Install on external media
 ```
+
+```
+pm list packages -e //only list enabled packages
+pm list packages -d //list disabled packages
+pm disable <packagename> //disable package
+pm enable PACKAGE_OR_COMPONENT;pm enable <packagename> //enable package
+```
