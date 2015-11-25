@@ -40,6 +40,14 @@ To use this class, simply create a single instance along with your service, and 
 + ``Loader`` An abstract class that performs asynchronous loading of data. While Loaders are active they should monitor the source of their data and deliver new results when the contents change.
 + ``ContentResolver`` ``public final void registerContentObserver (Uri uri, boolean notifyForDescendents, ContentObserver observer)`` Register an observer class that gets callbacks when data identified by a given content URI changes.注册一个observer类，当给定的URI所指向的内容发生变化时，用来回调。
 + ``UEventObserver``,UEventObserver is an abstract class that receives UEvent's from the kernel.Subclass UEventObserver, implementing ``onUEvent(UEvent event)``, then call ``startObserving()`` with a match string. The UEvent thread will then call your ``onUEvent()`` method when a UEvent occurs that contains your match string.Call ``stopObserving()`` to stop receiving UEvent's.
++ Android6.0 引入了新的运行时权限（runtime permissions）模型，用于应用在运行中必要时申请权限。由于新模型包含了READ/WRITE_EXTERNAL_STORAGE，因此平台需要在不杀死或者重启运行中的应用的前提下，动态对存储访问授权。这是通过维护所有挂载的存储设备的三个不同视图来实现的：
+
+  + ``/mnt/runtime/default`` 对所有的应用、root名字空间（adb 和其他系统组件）可见，而无需任何权限
+  + ``/mnt/runtime/read`` 对有``READ_EXTERNAL_STORAGE``权限的应用可见。
+  + ``/mnt/runtime/write`` 对有``WRITE_EXTERNAL_STORAGE``权限的应用可见。
+
+在zygote fork时，我们为每个运行中的应用创建一个mount名字空间，在其中bind mount合适的初始视图。然后，当被授予运行时权限时，vold在运行中的应用的名字空间上，通过bind mount来更新视图。注意，如果权限被撤销，将意味着该应用被kill。系统使用``setns()``函数来实现上述特性，这要求Linux3.8,不过Linux3.4加上补丁上也可以支持该功能。在Android6.0中，第三方应用不再被加入sdcard_r和sdcard_rw组中。相反，通过给应用挂载合适的运行时视图，实现对外部存储的访问控制。同时，使用everybodyGID来进行的跨用户交互被禁止了。
+
 + ``PreferenceFragment``,Shows a hierarchy of Preference objects as lists. These preferences will automatically save to ``SharedPreferences`` as the user interacts with them. To retrieve an instance of ``SharedPreferences`` that the preference hierarchy in this fragment will use, call ``getDefaultSharedPreferences(android.content.Context)`` with a context in the same package as this fragment.Furthermore, the preferences shown will follow the visual style of system preferences. It is easy to create a hierarchy of preferences (that can be shown on multiple screens) via XML. For these reasons, it is recommended to use this fragment (as a superclass) to deal with preferences in applications.
 + ``FragmentManager.BackStackEntry``,Representation of an entry on the fragment back stack, as created with ``FragmentTransaction.addToBackStack()``. Entries can later be retrieved with ``FragmentManager.getBackStackEntry()``.
 + The best way to add a share action item to an ``ActionBar`` is to use ``ShareActionProvider``, which became available in API level 14.

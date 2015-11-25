@@ -40,6 +40,8 @@ date: 2014-06-11 23:31
 + ``adb shell input keyevent 66``enter
 + ``adb shell input keyevent 4``back
 + ``adb shell input keyevent``, either an ``event_code`` or a ``string`` will be sent to the device.
++ ``adb shell pm list permissions -g -d`` 查看危险权限列表。正常权限指的是所有非危险（non-dangerous）权限，包括normal，system和signature 权限。正常权限风险较低，用于容许应用以最小风险来访问隔离的应用级别的特性。
+
 
 ```bash
 usage: input [text|keyevent]
@@ -135,7 +137,7 @@ adb shell input text 'this%sis%san%sexample' // %s means SPACE
 ```
 
 + ``adb shell getevent``,``adb shell getevent /dev/input/eventx``,``adb shell sendevent /dev/input/eventx``
-+ ``adb shell input touchscreen <x1> <y1> <x2> <y2>``,``adb shell input touchscreen swipe 18 665 18 350``模拟滑动
++ ``adb shell input touchscreen <x1> <y1> <x2> <y2>``,``adb shell input touchscreen swipe 18 665 18 350``模拟滑动输入
 
 
 ## adb shell am (ActivityManager) ##
