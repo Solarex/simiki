@@ -121,7 +121,86 @@ There are five supported filesystem types:``yaffs2``,``mtd``,``ext4``,``emmc``,`
 
 Starting in Android 3.0, the ``recovery.fstab`` file gains an additional optional field, options. Currently the only defined option is length , which lets you explicitly specify the length of the partition. This length is used when reformatting the partition (e.g., for the userdata partition during a data wipe/factory reset operation, or for the system partition during installation of a full OTA package). If the length value is negative, then the size to format is taken by adding the length value to the true partition size. For instance, setting "length=-16384" means the last 16k of that partition will not be overwritten when that partition is reformatted. This supports features such as encryption of the userdata partition (where encryption metadata is stored at the end of the partition that should not be overwritten).
 
++ Android OS images use cryptographic signatures in two places:
 
+  + Each ``.apk`` file inside the image must be signed. Android's Package Manager uses an ``.apk`` signature in two ways:
+    + When an application is replaced, it must be signed by the same key as the old application in order to get access to the old application's data. This holds true both for updating user apps by overwriting the ``.apk``, and for overriding a system app with a newer version installed under ``/data``.
+    + If two or more applications want to share a user ID (so they can share data, etc.), they must be signed with the same key.
+  + OTA update packages must be signed with one of the keys expected by the system or the installation process will reject them.
+
++ To generate your own unique set of release-keys, run these commands from the root of your Android tree:
+
+```bash
+#$subject should be changed to reflect your organization's information.
+subject='/C=US/ST=California/L=Mountain View/O=Android/OU=Android/CN=Android/emailAddress=android@android.com'
+mkdir ~/.android-certs
+for x in releasekey platform shared media; do \
+    ./development/tools/make_key ~/.android-certs/$x "$subject"; \
+done
+```
+
++ To generate a release image, use:
+
+```bash
+make dist
+./build/tools/releasetools/sign_target_files_apks \
+    -o \    # explained in the next section
+    -d ~/.android-certs out/dist/*-target_files-*.zip \
+    signed-target_files.zip
+```
+
+The ``sign_target_files_apks`` script takes a ``target-files .zip`` as input and produces a new ``target-files .zip`` in which all the .apks have been signed with new keys. The newly signed images can be found under ``IMAGES/`` in ``signed-target_files.zip``.
+
++ A signed target-files zip can be converted into a signed OTA update zip using the following procedure:
+
+```bash
+./build/tools/releasetools/ota_from_target_files \
+    -k ~/.android-certs/releasekey \
+    signed-target_files.zip \
+    signed-ota_update.zip
+```
+
++ Update packages received from the main system are typically verified twice: once by the main system, using the ``RecoverySystem.verifyPackage()`` method in the android API, and then again by recovery. The RecoverySystem API checks the signature against public keys stored in the main system, in the file ``/system/etc/security/otacerts.zip`` (by default). Recovery checks the signature against public keys stored in the recovery partition RAM disk, in the file ``/res/keys``.
+
++ Each key comes in two files: the **certificate**, which has the extension **.x509.pem**, and the **private key**, which has the extension **.pk8**. The private key should be kept secret and is needed to sign a package. The key may itself be protected by a password. The certificate, in contrast, contains only the public half of the key, so it can be distributed widely. It is used to verify a package has been signed by the corresponding private key.
+The standard Android build uses four keys, all of which reside in build/target/product/security:
+  + ``testkey``:Generic default key for packages that do not otherwise specify a key.
+  + ``platform``:Test key for packages that are part of the core platform.
+  + ``shared``:Test key for things that are shared in the home/contacts process.
+  + ``media``:Test key for packages that are part of the media/download system.
+Individual packages specify one of these keys by setting ``LOCAL_CERTIFICATE`` in their ``Android.mk`` file. (testkey is used if this variable is not set.) You can also specify an entirely different key by pathname, e.g.:
+
+```bash
+#device/yoyodyne/apps/SpecialApp/Android.mk
+ [...]
+
+LOCAL_CERTIFICATE := device/yoyodyne/security/special
+#Now the build uses the device/yoyodyne/security/special.{x509.pem,pk8} key to sign SpecialApp.apk. The build can use only private keys that are not password protected.
+```
+
++ Android uses 2048-bit RSA keys with public exponent 3. You can generate certificate/private key pairs using the openssl tool from openssl.org:
+
+```bash
+# generate RSA key
+% openssl genrsa -3 -out temp.pem 2048
+Generating RSA private key, 2048 bit long modulus
+....+++
+.....................+++
+e is 3 (0x3)
+
+# create a certificate with the public part of the key
+% openssl req -new -x509 -key temp.pem -out releasekey.x509.pem \
+  -days 10000 \
+  -subj '/C=US/ST=California/L=San Narciso/O=Yoyodyne, Inc./OU=Yoyodyne Mobility/CN=Yoyodyne/emailAddress=yoyodyne@example.com'
+
+# create a PKCS#8-formatted version of the private key
+% openssl pkcs8 -in temp.pem -topk8 -outform DER -out releasekey.pk8 -nocrypt
+
+# securely delete the temp.pem file
+% shred --remove temp.pem
+```
+
+The openssl pkcs8 command given above creates a ``.pk8`` file with no password, suitable for use with the build system. To create a ``.pk8`` secured with a password (which you should do for all actual release keys), replace the ``-nocrypt`` argument with ``-passout stdin``; then openssl will encrypt the private key with a password read from standard input.
 
 
 
