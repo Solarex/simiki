@@ -202,5 +202,10 @@ e is 3 (0x3)
 
 The openssl pkcs8 command given above creates a ``.pk8`` file with no password, suitable for use with the build system. To create a ``.pk8`` secured with a password (which you should do for all actual release keys), replace the ``-nocrypt`` argument with ``-passout stdin``; then openssl will encrypt the private key with a password read from standard input.
 
++ Once you have signed-target-files.zip, you need to create the image so you can put it onto a device. To create the signed image from the target files, run the following command from the root of the Android tree:
 
+```bash
+./build/tools/releasetools/img_from_target_files signed-target-files.zip signed-img.zip
+```
 
+The resulting file, ``signed-img.zip``, contains all the ``.img`` files. To load an image onto a device, use fastboot as follows:``fastboot update signed-img.zip``.
