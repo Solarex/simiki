@@ -39,6 +39,10 @@ date: 2015-11-26 10:39
 
 + change launcher color
 
+When a TV app launches, the system displays an animation that resembles an expanding, filled circle. 
+To customize the color of this animation, set the ``android:colorPrimary`` attribute of your TV app or activity to a specific color. 
+You should also set two additional ``transition overlap`` attributes to ``true``.
+
 ```xml
 <resources>
     <style ... >
@@ -141,6 +145,8 @@ Background screen elements that the user doesn't directly interact with should n
 
 The following example shows a root layout that can contain background elements, and a nested child layout that has a 5% margin and can contain elements within the overscan safe area:
 
+TV边界应该留些边距。
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -169,6 +175,8 @@ Do not apply overscan margins to your layout if you are using the v17 leanback c
 
 + modifying directional navigation
 
+The Android framework automatically applies a directional navigation scheme based on the relative position of focusable elements in your layouts. You should test the generated navigation scheme in your app using a D-pad controller. After testing, if you decide you want users to move through your layouts in a specific way, you can set up explicit directional navigation for your controls.
+
 ```xml
 <TextView android:id="@+id/Category1"
         android:nextFocusDown="@+id/Category2"\>
@@ -178,3 +186,10 @@ Do not apply overscan margins to your layout if you are using the v17 leanback c
 
 You should set up the navigation order as a loop, so that the last control directs focus back to the first one.
 
++ provide clear focus and selection
+
+It is important to always have an item in focus that a user can take action on immediately after your app starts, or any time it is idle.
+
+Your app layout and implementation should use color, size, animation, or a combination of these attributes to help users easily determine what actions they can take next. Use a uniform scheme for indicating focus across your application.
+
+Use ``selector`` to implement highlights for focused and selected controls.
