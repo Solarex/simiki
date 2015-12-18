@@ -44,6 +44,6 @@ date: 2015-12-05 00:27
   + ``BitmapShader(Bitmap bitmap, Shader.TileMode tileX, Shader.TileMode tileY)``,``tileX``和``tileY``分部表示x轴和y轴上的TileMode
   + ``LinearGradient``线性渐变``LinearGradient(float x0, float y0, float x1, float y1, int color0, int color1, Shader.TileMode tile)``，``LinearGradient(float x0, float y0, float x1, float y1, int[] colors, float[] positions, Shader.TileMode tile)``
   + ``SweepGradient``梯度渐变，扫描式渐变，类似雷达``SweepGradient(float cx, float cy, int color0, int color1)``，``SweepGradient(float cx, float cy, int[] colors, float[] positions)``
-  + ``ComposeShader``
-  + ``RadialGradient``
+  + ``RadialGradient``径向渐变，圆形中心向四周渐变的效果
+  + ``ComposeShader``组合Shader的意思，顾名思义就是两个Shader组合在一起作为一个新Shader，``ComposeShader (Shader shaderA, Shader shaderB, Xfermode mode)``，``ComposeShader (Shader shaderA, Shader shaderB, PorterDuff.Mode mode)``，一个指定了只能用PorterDuff的混合模式而另一个只要是Xfermode下的混合模式都没问题
   

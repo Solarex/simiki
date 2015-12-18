@@ -193,3 +193,5 @@ It is important to always have an item in focus that a user can take action on i
 Your app layout and implementation should use color, size, animation, or a combination of these attributes to help users easily determine what actions they can take next. Use a uniform scheme for indicating focus across your application.
 
 Use ``selector`` to implement highlights for focused and selected controls.
+
++ ``ImageCardView``,To receive focus from the D-pad controller by calling ``setFocusable(true)`` and ``setFocusableInTouchMode(true)``.
