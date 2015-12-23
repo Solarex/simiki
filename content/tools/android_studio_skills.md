@@ -2,6 +2,49 @@
 title: "Android Studio Skills"
 date: 2015-05-05 11:49
 ---
+##AS shortcuts(XWindow)
++ ``enter``补全``tab``补全替换掉错误的
++ ``esc``编辑窗口获取焦点，``shift+esc``关闭其他窗口，编辑窗口获取焦点，e.g. find usage --> shift+esc
++ ``f12``重新打开刚才关闭的工具窗口
++ ``ctrl+tab``窗口切换，编辑窗口+工具窗口``ctrl+e``recently opened files ``ctrl+shift+e``recently opened tool windows
++ ``ctrl+shift+f12``关闭所有工具窗口
++ ``ctrl+p``方法参数提示
++ ``ctrl+alt+v``自动生成变量并补全变量类型
++ ``ctrl+alt+p``将方法中声明的局部变量提取到方法参数中供外部传入
++ ``ctal+alt+m``将选中代码抽取成方法``ctrl+alt+n``反向
++ ``shift+ctrl+alt+t``弹出重构菜单
++ ``shift+f6``修改变量名、方法名、类名
++ ``alt+f1``弹出文件菜单，可以在finder中定位文件
++ ``shift+方向键``拓展选择
++ ``ctrl+alt+t``surround with菜单
++ ``ctrl+alt+h``显示调用方法树
++ ``cmd+0``(user-defined)navigate back ``ctrl+alt+向右``navigate forward
++ ``ctrl+b``，``ctrl+click``跳转到声明，``ctrl+alt+b``跳转到实现，``ctrl+shift+b``跳转到类型实现声明
++ ``ctrl+u``跳转到父类
++ ``alt+上下方向键``在内部类和方法声明之间跳转
++ ``ctrl+f4``关闭窗口
++ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ##shortcuts
 + [quick_start](http://confluence.jetbrains.com/display/IntelliJIDEA/Quick+Start)
 + [ref](http://www.techrepublic.com/article/four-handy-android-studio-shortcuts-for-eclipse-users/)
@@ -15,3 +58,4 @@ date: 2015-05-05 11:49
 + ``Ctrl+Alt+Space``类名或接口名提示
 
 + ``tasks.withType(JavaCompile){}``,[https://stackoverflow.com/questions/24668746/after-upgrading-to-gradle-2-0-could-not-find-property-compile-on-root-project](https://stackoverflow.com/questions/24668746/after-upgrading-to-gradle-2-0-could-not-find-property-compile-on-root-project)
+
