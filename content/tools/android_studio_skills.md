@@ -22,28 +22,21 @@ date: 2015-05-05 11:49
 + ``ctrl+b``，``ctrl+click``跳转到声明，``ctrl+alt+b``跳转到实现，``ctrl+shift+b``跳转到类型实现声明
 + ``ctrl+u``跳转到父类
 + ``alt+上下方向键``在内部类和方法声明之间跳转
++ ``ctrl+f12``显示file structure
++ ``ctrl+shift+i`` quick definition lookup
++ ``ctrl+shift+plus/minus`` 展开折叠代码段
++ ``ctrl+shift+a`` find actions
++ ``alt+shift+up/down`` move line up/down
++ ``ctrl+y`` delete line or selections
++ ``ctrl+d`` duplicate lines
++ ``ctrl+w/ctrl+shift+w`` expand/shrink selections
++ ``ctrl+j``inset live template / snippet
++ ``ctrl+shift+enter``complete statments
++ ``ctrl+shift+backspace`` last edition location
++ ``ctrl+shift+j`` join lines
++ ``cmd+5``toggle breakpoints ``alt+cmd+5`` view all breakpoints
++ ``shift+f6`` rename
 + ``ctrl+f4``关闭窗口
-+ 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ##shortcuts
 + [quick_start](http://confluence.jetbrains.com/display/IntelliJIDEA/Quick+Start)
