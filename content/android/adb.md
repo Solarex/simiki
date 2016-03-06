@@ -138,6 +138,8 @@ adb shell input text 'this%sis%san%sexample' // %s means SPACE
 
 + ``adb shell getevent``,``adb shell getevent /dev/input/eventx``,``adb shell sendevent /dev/input/eventx``
 + ``adb shell input touchscreen <x1> <y1> <x2> <y2>``,``adb shell input touchscreen swipe 18 665 18 350``模拟滑动输入
++ ``adb connect <device-ip-number>``连接指定ip
++ ``adb shell dumpsys activity top``,``adb shell dumpsys activity``,(am状态Activity Manager State),``adb shell dumpsys package``package information,``adb shell dumpsys procstats``memory info,``adb shell dumpsys gfxinfo``graphics information
 
 
 ## adb shell am (ActivityManager) ##

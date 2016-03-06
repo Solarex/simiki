@@ -22,3 +22,5 @@ date: 2014-06-11 23:31
 + Win:``tasklist /svc``,``taskkill /pid 1965``,``taskkill /f /im QQ.exe``
 + ``tar xvf sth.tgz -C uncompress_folder``
 + ``updatedb -l 0 -o db_file -U source_directory`` , ``locate sth -d db_file``
++ find out the working directory of a running process,``pwdx <pid>``,``lsof -p <pid> | grep cwd``,``readlink /proc/<pid>/cwd``
++ format json in vim,``%!python -m json.tool``
