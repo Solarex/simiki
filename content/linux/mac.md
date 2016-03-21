@@ -18,3 +18,9 @@ date: 2015-08-30 23:31
   + ``sips -s format jpeg input.png -o output.jpg``，修改图片格式，使用-s参数可以修改图片格式为指定值，sips支持
 jpeg | tiff | png | gif | jp2 | pict | bmp | qtif | psd | sgi | tga共11种格式。并且-s除了能修改文件格式外，还能修改图片的其它meta数据，具体可以通过man sips查看。
   + ``sips -g pixelWidth -g pixelHeight image_file_name`` 上面命令可以获取图片的长宽高信息，与-s参数一样，-g也支持更多的meta值，可以参见man sips的信息
++ brew
+  + ``brew list``,``brew list --pinned``
+  + ``brew search git``,``brew install git``,``brew update && brew upgrade``
+  + ``brew cleanup``
+  + ``brew cask search sogouinput``
+  + ``brew cask install sogouinput``
