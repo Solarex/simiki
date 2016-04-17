@@ -24,3 +24,4 @@ jpeg | tiff | png | gif | jp2 | pict | bmp | qtif | psd | sgi | tga共11种格�
   + ``brew cleanup``
   + ``brew cask search sogouinput``
   + ``brew cask install sogouinput``
++ ``system_profiler SPUSBDataType``得到所有USB设备信息，``system_profiler SPNetworkDataType``得到所有网络信息
