@@ -25,3 +25,8 @@ jpeg | tiff | png | gif | jp2 | pict | bmp | qtif | psd | sgi | tga共11种格�
   + ``brew cask search sogouinput``
   + ``brew cask install sogouinput``
 + ``system_profiler SPUSBDataType``得到所有USB设备信息，``system_profiler SPNetworkDataType``得到所有网络信息
++ disable AndroidFileTransfer agent
+  + http://android.stackexchange.com/questions/33504/stop-android-file-transfer-popping-up
+  + ``rm -r ~/Library/Application\ Support/Google/Android\ File\Transfer/Android\ File\ Transfer\ Agent.app``
+  + ``cd /Applications/Android\ File\ Transfer.app/Contents/Resources && mv Android\ File\ Transfer\ Agent.app Android\ File\ Transfer\Agent.app.disable``
+  + remove AFT from login items,System preferences --> Users&Groups --> user --> login items

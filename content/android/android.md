@@ -15,5 +15,9 @@ date: 2014-06-18 04:43
 + ``android update avd -n <name>``
 + ``android delete avd -n <name>``
 + ``emulator -avd <avd_name> [<options>]``,eg,``emulator -avd WVGA800 -scale 96dpi -dpi-device 160``,``emulator -avd <avd_name>  -wipe-data``
++ ``adb shell service list``
++ ``adb shell dumpsys activity/cpuinfo/battery``
++ ``adb shell dumpsys | grep "DUMP OF SERVICE"``
++ ``adb shell dumpsys window -h``,``adb shell dumpsys activity -h``,``adb shell dumpsys meminfo -h``,``adb shell dumpsys package -h``,``adb shell dumpsys batteryinfo -h``
 
 ### Using Emulator ###

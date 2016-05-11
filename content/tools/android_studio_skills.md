@@ -37,6 +37,7 @@ date: 2015-05-05 11:49
 + ``cmd+5``toggle breakpoints ``alt+cmd+5`` view all breakpoints
 + ``shift+f6`` rename
 + ``ctrl+f4``关闭窗口
++ line wrap,``Preferences --> Editor --> Code Style``,set ``Right margin (columns)`` to ``120``,``Preferences --> Editor --> Code Style --> Java --> Wrapping and Braces --> Ensure right margin is not exceeed`` checked,``code --> Reformat code``
 
 ##shortcuts
 + [quick_start](http://confluence.jetbrains.com/display/IntelliJIDEA/Quick+Start)
