@@ -21,4 +21,5 @@ date: 2014-06-11 23:29
 + find usage ``shift+command+g``
 + Alt+left command+[ last location
 + command+g declaration
++ Right-click on an Eclipse project then "Export" then "General" then "Ant build files". I don't think it is possible to customise the output format though.
 
