@@ -11,6 +11,7 @@ date: 2015-08-30 23:31
 + ``mitmproxy -a IP_ADDR -p PORT —-no-upstream-cert``代理时不校验ssl证书
 + Use the following Terminal command to reset the DNS cache in OS X v10.10.4 or later:``sudo killall -HUP mDNSResponder``
 + sips
+  + ``sips --resampleWidth <width in pixel> --resampleHeight <height in pixels> /pat/to/pic``
   + ``sips -Z 320 iamge_file_name``裁剪时固定图片宽度，高度自适应
   + ``sips -z 400 300 iamge_file_name``裁剪时指定图片宽与高
   + ``sips -r 90 image_file_name`` 旋转图片，上面的命令将图片顺时针旋转90度，相信机智的你已经想到逆时针90度应该是-90了。没错，顺时针用正数表示，逆时针可以用负数表示。你可以进行任意角度和方向的旋转。
