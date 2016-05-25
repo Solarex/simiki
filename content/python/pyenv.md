@@ -26,11 +26,23 @@ For full documentation, see: https://github.com/yyuu/pyenv#readme
 ```
 
 + ``brew install pyenv``
+
 + ``echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc``,``echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc``,``echo 'eval "$(pyenv init -)"' >> ~/.bashrc``,``source ~/.bashrc``
+
+
 + ``pyenv install --list``
+
+
 + ``pyenv global``
+
 + ``pyenv versions``
+
 + ``pyenv install 3.5.0``
+
 + ``git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv && source ~/.bashrc``
+
 + ``pyenv virtualenv 3.5.0 simiki``,``pyenv activate simiki``,``pip list/freeze``,``pyenv deactivate simiki``
+
 + ``pip uninstall <package>``
+
+

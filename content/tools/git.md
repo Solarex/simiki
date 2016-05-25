@@ -66,15 +66,25 @@ popd
 # git 命令
 
 + ``git remote show origin``，查看远程分支
+
 + ``git remote prune origin``，删除远程已经不存在的分支，stale状态
+
 + ``git remote set-url origin git@192.168.6.70:res_dev_group/test.git`` 变更项目地址
+
 + ``git commit --amend``，修改最近的一次提交
+
 + ``git commit --amend --reset-author``重置最后一次提交的author
+
 + ``git log --follow -p file``，查看文件历史版本
+
 + ``git cherry-pick commit-id``，"复制"一个提交节点并在当前分支做一次完全一样的新提交。
+
 + ``git clone -o meizu ssh://*****``,change remote origin to meizu
+
 + [visual-git-guide](https://marklodato.github.io/visual-git-guide/index-zh-cn.html)
+
 + ``git config --global diff.external /path/to/meld.sh``
+
 
 ```bash
 #!/bin/bash
