@@ -5,6 +5,12 @@ date: 2014-06-11 23:31
 ## aapt (Android Asset Package Tool) ##
 + ``aapt dump badging test.apk`` 查看应用支持feature列表
 
++ ``aapt list  weixin.apk``使用AAPT查看Android开发包的目录结构
+
++ ``aapt add wandoujia.apk  assets/channel.txt``使用AAPT添加一个文件
+
++ ``aapt remove wandoujia.apk assets/channel.txt``使用AAPT删除一个文件
+
 ```
 Android Asset Packaging Tool
 
