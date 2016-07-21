@@ -12,5 +12,26 @@ date: 2016-06-21 16:01
 **Receiving MotionEvent Objects**
 
 +   When we want touch events to do something new with a particular View object, we can extend the class, override the ``onTouchEvent()`` method, and put our logic there. We can also implement the ``View.OnTouchListener`` interface and set up a callback handler on the ``View`` object. By setting up a callback handler with ``onTouch()``, ``MotionEvents`` will be delivered there first before they go to the View’s ``onTouchEvent()`` method. Only if the ``onTouch()`` method returned false would our View’s ``onTouchEvent()`` method get called.
-+   772
+
+
+**Understanding MotionEvent Contents**
+
+### Recycling MotionEvents
+
++   ``MotionEvent.obtaion``,``MotionEvent.recyle``
+
+### Using VelocityTracker
+
++   To use ``VelocityTracker``, you first get an instance of a ``VelocityTracker`` by calling the static method ``VelocityTracker.obtain()``. You can then add ``MotionEvent`` objects to it with the ``addMovement(MotionEvent ev)`` method. You would call this method in your handler that receives ``MotionEvent`` objects, from a handler method such as ``onTouch()``, or from a view’s ``onTouchEvent()``. The ``VelocityTracker`` uses the ``MotionEvent`` objects to figure out what is going on with the user’s touch sequence. Once ``VelocityTracker`` has at least two ``MotionEvent`` objects in it, we can use the other methods to find out what’s happening.
++   When you are finished with the ``VelocityTracker`` object you got with the ``obtain()`` method, call the ``VelocityTracker`` object’s ``recycle()`` method.
+
+## Multitouch
+
+### The Basics of Multitouch
+
++   At a basic level, the methods of ``MotionEvent`` are the same; that is, we call ``getAction()``, ``getDownTime()``, ``getX()``, and so on. However, when more than one finger is touching the screen, the ``MotionEvent`` object must include information from all fingers, with some caveats. The action value from ``getAction()`` is for one finger, not all. The down time value is for the very first finger down and measures the time as long as at least one finger is down. The location values ``getX()`` and ``getY()``, as well as ``getPressure()`` and ``getSize()``, can take an argument for the finger; therefore, you need to use a pointer index value to request the information for the finger you’re interested in. There are method calls that we used previously that did not take any argument to specify a finger (for example, ``getX()``, ``getY()``), so which finger would the values be for if we used those methods? You can figure it out, but it takes some work. Therefore, if you don’t take into account multiple fingers all of the time, you might end up with some strange results. 
+
+**Understanding Multitouch Contents**
+
+**Touches with Maps**
 
