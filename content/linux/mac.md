@@ -34,6 +34,9 @@ date: 2015-08-30 23:31
 
 + [java applet security in mac](https://www.java.com/en/download/faq/exception_sitelist.xml),``system preferences``-->``java``-->``security``-->``exception list``
 
++ ``alias server='python -m SimpleHTTPServer || python -m http.server``,``alias show='defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder'``,``alias hidden='defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder``'``alias port='port(){ lsof -i tcp:$@;};port $1'``
++ ``function port() { lsof -i tcp:$1 }``,``function ports() { lsof -Pni4 | grep LISTEN }``
+
 + brew
 
   + ``brew list``,``brew list --pinned``
@@ -58,4 +61,4 @@ date: 2015-08-30 23:31
 
   + remove AFT from login items,System preferences --> Users&Groups --> user --> login items
 
-
++ Your services (the ones that are local to your account,automator) are in the folder: ``~/Library/Services``.
