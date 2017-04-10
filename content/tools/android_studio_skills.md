@@ -3,6 +3,29 @@ title: "Android Studio Skills"
 date: 2015-05-05 11:49
 ---
 ##AS shortcuts(XWindow)
++ 格式化代码 main->Code->Reformat Code  Ctrl+Alt+L
++ 复制行 main->Edit->Duplicate Line Ctrl+D
++ 删除行 main->Edit Actions->Delete Line Ctrl+Y
++ 上下移动行 main->Code->Move Line Down/Up Alt+Shift+Up/Down
++ 查找引用 main->Edit->Find->Find Usage Alt+F7
++ 查找下一个 main->Edit->Find->Find Next F3
++ 查找上一个 main->Edit->Find->Find Previous Shift+F3
++ 从路径中查找 main->Edit->Find->Find in path Ctrl+Shift+F
++ 行注释 Ctrl+/
++ 块注释 Ctrl+Shift+/
++ 重命名 main->Refactor->Rename Shift+F6
++ 提取方法 main->Refactor->Extract->Method Ctrl+Alt+M
++ 查找文本 Ctrl+F
++ 替换文本 Ctrl+R
++ 查找类 main->Navigate->Class Ctrl+N
++ 查找文件 main->Navigate->File Ctrl+Shift+N
++ 大小写切换 main->Edit->Toggle Case Ctrl+Shift+U
++ 方法折叠/展开 main->Code->Folding->Expand/Collapse Ctrl+加号/减号
++ 折叠/展开所有的方法 main->Code->Folding->ExpandAll/CollapseAll Ctrl+Shift+加号/减号
++ 隐藏所有面板 main->Window->Active Tool Window->Hide All Tool Window Ctrl+Shift+F12
++ 列选择/块选择 Alt+选择代码块进行操作
++ 代码提示不区分大小写 Preferences->Editor->General->Code Completion->Case sensitive completion 选择None
++ 鼠标显示悬浮提示 Preferences->Editor->General->other->勾选show quick document on mouse over
 + ``enter``补全``tab``补全替换掉错误的
 
 + ``esc``编辑窗口获取焦点，``shift+esc``关闭其他窗口，编辑窗口获取焦点，e.g. find usage --> shift+esc
