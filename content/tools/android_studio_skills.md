@@ -26,6 +26,14 @@ date: 2015-05-05 11:49
 + 打开当前类的父类或者实现的接口 ctrl+U
 + 切换代码视图 alt+left/right
 + 复制路径 ctrl+shift+C
++ 跳到下一步 F8
++ 跳出函数跳到下一个断点 shift+F8
++ 强制跳出函数 alt+shift+F8
++ 进入代码 F7
++ 智能进入代码 shift+F7
++ 强制进入代码 alt+shift+F7
++ 运行至光标处 alt+F9
++ 停止运行 ctrl+F2
 + 大小写切换 main->Edit->Toggle Case Ctrl+Shift+U
 + 方法折叠/展开 main->Code->Folding->Expand/Collapse Ctrl+加号/减号
 + 折叠/展开所有的方法 main->Code->Folding->ExpandAll/CollapseAll Ctrl+Shift+加号/减号
