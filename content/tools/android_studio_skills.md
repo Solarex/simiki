@@ -34,6 +34,7 @@ date: 2015-05-05 11:49
 + 强制进入代码 alt+shift+F7
 + 运行至光标处 alt+F9
 + 停止运行 ctrl+F2
++ 调到匹配的括号处 ctrl+shift+M
 + 大小写切换 main->Edit->Toggle Case Ctrl+Shift+U
 + 方法折叠/展开 main->Code->Folding->Expand/Collapse Ctrl+加号/减号
 + 折叠/展开所有的方法 main->Code->Folding->ExpandAll/CollapseAll Ctrl+Shift+加号/减号
