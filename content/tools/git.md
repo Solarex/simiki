@@ -114,4 +114,4 @@ git submodule update --init --recursive
 ```
 
 +   ``git subtree add --prefix emacs/.emacs.d git@github.com:jcouyang/.emacs.d.git master —squash``,``git remote add emacs git@github.com:jcouyang/.emacs.d.git``,``git subtree push --prefix emacs/.emacs.d emacs master``
-+   ​
++   ​``git pull origin master --allow-unrelated-histories``
