@@ -115,3 +115,10 @@ git submodule update --init --recursive
 
 +   ``git subtree add --prefix emacs/.emacs.d git@github.com:jcouyang/.emacs.d.git master —squash``,``git remote add emacs git@github.com:jcouyang/.emacs.d.git``,``git subtree push --prefix emacs/.emacs.d emacs master``
 +   ​``git pull origin master --allow-unrelated-histories``
++ rebase 将一个分支上所有的提交历史都应用到另一个分支上 不要在一个已经公开的远端分支上使用rebase.
+
+```
+# 将experimentBranch应用到master上面
+# git rebase <basebranch> <topicbranch>
+$ git rebase master experimentBranch
+```
