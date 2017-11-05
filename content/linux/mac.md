@@ -62,3 +62,5 @@ date: 2015-08-30 23:31
   + remove AFT from login items,System preferences --> Users&Groups --> user --> login items
 
 + Your services (the ones that are local to your account,automator) are in the folder: ``~/Library/Services``.
+
++ QuickLook添加WebP支持，去[github](https://github.com/dchest/webp-quicklook/releases)下载，放到``/Library/QuickLook``目录下，终端执行``qlmanage -r``。
