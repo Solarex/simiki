@@ -7,3 +7,5 @@ date: 2015-08-22 14:59
 
 + ``./gradlew app:dependencies`` show a detailed dependency graph
 
++ ``./gradlew :app:androidDependencies``
+
